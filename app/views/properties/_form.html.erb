@@ -39,15 +39,15 @@
   <div class="line"></div>
 
   <%count=1%>
-  <%=form.fields_for :nearests do |nearest|%>
+  <%=form.fields_for :local_stations do |local_station|%>
     <h3><%="最寄駅#{count}"%></h3>
     <%count+=1%>
-    <%=nearest.label :route,"路線名"%>
-    <%=nearest.text_field :route%>
-    <%=nearest.label :station,"駅名"%>
-    <%=nearest.text_field :station%>
-    <%=nearest.label :walk,"徒歩"%>
-    <%=nearest.text_field :walk%>分
+    <%=local_station.label :route,"路線名"%>
+    <%=local_station.text_field :route%>
+    <%=local_station.label :station_name,"駅名"%>
+    <%=local_station.text_field :station_name%>
+    <%=local_station.label :times,"徒歩"%>
+    <%=local_station.text_field :times%>分
     <br>
   <%end%>
 

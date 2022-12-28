@@ -27,23 +27,25 @@
 
 
 <div class="line"></div>
+
 <%count=1%>
-<%@local_station.each do |nearest|%>
+<%@local_station.each do |local_station|%>
   <h3><%="最寄駅#{count}"%></h3>
   <%count+=1%>
   <p>
     <strong>路線名:</strong>
-    <%=nearest.route%>
+    <%=local_station.route%>
   </p>
   <p>
     <strong>駅名:</strong>
-    <%=nearest.station%>
+    <%=local_station.station_name%>
   </p>
   <p>
-    <strong>徒歩:</strong>
-    <%=nearest.walk%>
+    <strong>時間:</strong>
+    <%=local_station.times%>
   </p>
 <%end%>
+
 <%= link_to '編集', edit_property_path(@property) %> |
 <%= link_to '戻る', properties_path %>
 <style>
