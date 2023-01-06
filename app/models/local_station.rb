@@ -1,0 +1,2 @@
+class LocalStation < ApplicationRecord
+end

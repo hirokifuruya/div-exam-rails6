@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>物件名:</strong>
+  <%= @property.name %>
+</p>
+
+<p>
+  <strong>賃料:</strong>
+  <%= @property.price %>
+</p>
+
+<p>
+  <strong>住所:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>築年数:</strong>
+  <%= @property.age %>
+</p>
+
+<p>
+  <strong>備考:</strong>
+  <%= @property.memo %>
+</p>
+
+
+<div class="line"></div>
+
+<%count=1%>
+<%@local_station.each do |local_station|%>
+  <h3><%="最寄駅#{count}"%></h3>
+  <%count+=1%>
+  <p>
+    <strong>路線名:</strong>
+    <%=local_station.route%>
+  </p>
+  <p>
+    <strong>駅名:</strong>
+    <%=local_station.station_name%>
+  </p>
+  <p>
+    <strong>時間:</strong>
+    <%=local_station.times%>分
+  </p>
+<%end%>
+
+<%= link_to '編集', edit_property_path(@property) %> |
+<%= link_to '戻る', properties_path %>
+<style>
+.line{
+  border-bottom:solid 1px #696969;
+}
+</style>
